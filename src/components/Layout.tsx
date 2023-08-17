@@ -21,8 +21,7 @@ function Layout({ children }: LayoutProps) {
       }`}
     >
       <Header />
-      {children}
-      <p>dudaluda</p>
+      <div className={`container mx-auto`}>{children}</div>
     </div>
   );
 }
