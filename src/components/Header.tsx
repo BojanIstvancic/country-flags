@@ -16,7 +16,10 @@ function Header() {
   return (
     <div className="container mx-auto p-4 flex  items-center justify-between">
       <h6 className="mb-0">Pokemon App</h6>
-      <div className="flex items-center" onClick={handleChangeTheme}>
+      <div
+        className="flex items-center cursor-pointer"
+        onClick={handleChangeTheme}
+      >
         {theme === Theme.DARK && <NightlightRoundedIcon />}
         {theme === Theme.LIGHT && <WbSunnyRoundedIcon />}
         <p className="ml-2">Change Theme</p>
