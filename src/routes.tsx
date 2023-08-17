@@ -1,17 +1,17 @@
 import { Suspense, lazy } from "react";
+import FallBack from "./pages/FallBack";
 import type { RouteObject } from "react-router";
 
 const Loadable = (Component: any) => (props: JSX.IntrinsicAttributes) =>
   (
-    <Suspense fallback={<h1>Loading</h1>}>
-      {/* Fix this fallback */}
+    <Suspense fallback={<FallBack />}>
       <Component {...props} />
     </Suspense>
   );
 
-const Home = Loadable(lazy(() => import("./Home")));
-const Details = Loadable(lazy(() => import("./Details")));
-const NotFound = Loadable(lazy(() => import("./NotFound")));
+const Home = Loadable(lazy(() => import("./pages/Home")));
+const Details = Loadable(lazy(() => import("./pages/Details")));
+const NotFound = Loadable(lazy(() => import("./pages/NotFound")));
 
 const routes: RouteObject[] = [
   {
