@@ -14,7 +14,11 @@ function Header() {
   };
 
   return (
-    <div className="container mx-auto p-4 flex  items-center justify-between">
+    <div
+      className={`container mx-auto p-4 flex items-center justify-between ${
+        theme === Theme.DARK ? "bg-slate-700" : "bg-slate-300"
+      }`}
+    >
       <h6 className="mb-0">Pokemon App</h6>
       <div
         className="flex items-center cursor-pointer"

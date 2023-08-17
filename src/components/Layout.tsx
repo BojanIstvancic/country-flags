@@ -14,7 +14,7 @@ function Layout({ children }: LayoutProps) {
 
   return (
     <div
-      className={`min-h-screen transition ease-in-out delay-150 ${
+      className={`min-h-screen transition ease-in-out ${
         theme === Theme.DARK
           ? "bg-slate-900 text-slate-200"
           : "bg-white text-slate-700"
