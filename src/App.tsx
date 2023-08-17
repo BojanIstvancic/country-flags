@@ -1,26 +1,9 @@
-import { Link, Routes, useRoutes } from "react-router-dom";
+import { Link, useRoutes } from "react-router-dom";
+import routes from "./routes";
 import "./App.css";
-import Home from "./Home";
-import Details from "./Details";
-import NotFound from "./NotFound";
 
 function App() {
-  let element = useRoutes([
-    {
-      path: "/",
-      children: [
-        {
-          index: true,
-          element: <Home />,
-        },
-        {
-          path: ":id",
-          element: <Details />,
-        },
-      ],
-    },
-    { path: "*", element: <NotFound /> },
-  ]);
+  const appRoutes = useRoutes(routes);
 
   return (
     <>
@@ -34,7 +17,7 @@ function App() {
           </li>
         </ul>
       </nav>
-      {element}
+      {appRoutes}
     </>
   );
 }
