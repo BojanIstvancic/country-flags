@@ -1,9 +1,27 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Routes, useRoutes } from "react-router-dom";
 import "./App.css";
 import Home from "./Home";
 import Details from "./Details";
+import NotFound from "./NotFound";
 
 function App() {
+  let element = useRoutes([
+    {
+      path: "/",
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: ":id",
+          element: <Details />,
+        },
+      ],
+    },
+    { path: "*", element: <NotFound /> },
+  ]);
+
   return (
     <>
       <nav>
@@ -12,14 +30,11 @@ function App() {
             <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <Link to={"/details"}>Details</Link>
+            <Link to={"/1"}>Details</Link>
           </li>
         </ul>
       </nav>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/details" element={<Details />} />
-      </Routes>
+      {element}
     </>
   );
 }
