@@ -21,7 +21,7 @@ NPM - node package manager
 Checkout the code
 
 ```
-git clone https://github.com/BojanIstvancic/matko-vukovic.git
+git clone https://github.com/BojanIstvancic/pokemon.git
 ```
 
 Install node modules
