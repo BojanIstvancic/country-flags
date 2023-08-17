@@ -6,6 +6,7 @@ import "./assets/global.css";
 
 import store from "./redux/store";
 import { Provider } from "react-redux";
+import { HelmetProvider } from "react-helmet-async";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -14,7 +15,9 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <App />
+        <HelmetProvider>
+          <App />
+        </HelmetProvider>
       </Provider>
     </BrowserRouter>
   </React.StrictMode>

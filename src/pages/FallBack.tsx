@@ -1,8 +1,15 @@
+import { Helmet } from "react-helmet-async";
+
 function FallBack() {
   return (
-    <div className="FallBack">
-      <p>FallBack Page:</p>
-    </div>
+    <>
+      <Helmet>
+        <title>Pokemons | Fallback</title>
+      </Helmet>
+      <div className="FallBack">
+        <p>FallBack Page:</p>
+      </div>
+    </>
   );
 }
 
