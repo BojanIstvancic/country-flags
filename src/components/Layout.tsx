@@ -1,8 +1,8 @@
 import { JSXElementConstructor, ReactElement } from "react";
-import { useAppSelector } from "../utils/hooks";
+import { useAppSelector } from "../redux/hooks";
 
 import Header from "./Header";
-import { selectTheme } from "../redux/reducers/theme/themeSlice";
+import { selectTheme } from "../redux/features/theme/themeSlice";
 import { Theme } from "../data/constants";
 
 interface LayoutProps {

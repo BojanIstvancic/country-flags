@@ -1,8 +1,8 @@
-import { useAppDispatch, useAppSelector } from "../utils/hooks";
+import { useAppDispatch, useAppSelector } from "../redux/hooks";
 
 import NightlightRoundedIcon from "@mui/icons-material/NightlightRounded";
 import WbSunnyRoundedIcon from "@mui/icons-material/WbSunnyRounded";
-import { changeTheme, selectTheme } from "../redux/reducers/theme/themeSlice";
+import { changeTheme, selectTheme } from "../redux/features/theme/themeSlice";
 import { Theme } from "../data/constants";
 import { Link } from "react-router-dom";
 
