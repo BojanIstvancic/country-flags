@@ -1,6 +1,11 @@
 import { Helmet } from "react-helmet-async";
+import { useGetAllPokemonsQuery } from "../redux/services/pokemon/pokemonAPI";
 
 function Home() {
+  const { data, isLoading, isSuccess, isError, error } =
+    useGetAllPokemonsQuery();
+
+  console.log(data);
   return (
     <>
       <Helmet>
