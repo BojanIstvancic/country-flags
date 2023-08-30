@@ -6,7 +6,7 @@ const NotFound = () => (
       <title>Pokemons | Error</title>
     </Helmet>
     <div className="NotFound">
-      <p>NotFound Page:</p>
+      <p>NotFound Page</p>
     </div>
   </>
 );

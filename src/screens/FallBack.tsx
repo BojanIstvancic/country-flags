@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import Loading from "../components/Loading/Loading";
 
 const FallBack = () => (
   <>
@@ -6,7 +7,8 @@ const FallBack = () => (
       <title>Pokemons | Fallback</title>
     </Helmet>
     <div className="FallBack">
-      <p>FallBack Page:</p>
+      <p>Loading Routes</p>
+      <Loading />
     </div>
   </>
 );

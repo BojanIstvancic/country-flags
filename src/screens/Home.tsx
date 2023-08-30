@@ -1,10 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { useGetAllPokemonsQuery } from "../redux/services/pokemon/pokemonAPI";
-import { Link } from "react-router-dom";
+import Loading from "../components/Loading/Loading";
 
 const Home = () => {
-  const { data, isLoading, isSuccess, isError, error } =
-    useGetAllPokemonsQuery();
+  const { data, isLoading, isError } = useGetAllPokemonsQuery();
 
   return (
     <>
@@ -12,12 +11,14 @@ const Home = () => {
         <title>Pokemons | Home</title>
         <meta
           name="description"
-          content="All the Pokémon data you'll ever need in one place"
+          content="All the Pokemon data you'll ever need in one place"
         />
       </Helmet>
-      <div className="Home">
-        <p>Home Page</p>
-        <Link to="/asdas">didi</Link>
+      <div className="py-4">
+        <h1>Pokemons</h1>
+        {data && <p>Test</p>}
+        {isLoading && <Loading />}
+        {isError && <p>Error</p>}
       </div>
     </>
   );

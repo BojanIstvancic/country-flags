@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
       }`}
     >
       <Header />
-      <div className={`container mx-auto`}>{children}</div>
+      <main className={`container mx-auto min-h-screen`}>{children}</main>
     </div>
   );
 };
