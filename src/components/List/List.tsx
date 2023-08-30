@@ -8,16 +8,18 @@ import ListItem from "./ListItem";
 const List = () => {
   const { data, isLoading, isError } = useGetAllPokemonsQuery();
 
+  console.log(data);
   return (
     <>
-      <div className="grid grid-cols-2 gap-4">
-        {data &&
-          data.results.map((item: Pokemon) => (
+      {data && (
+        <div className="grid grid-cols-2 gap-4">
+          {data.results.map((item: Pokemon) => (
             <ListItem item={item} key={item.name} />
           ))}
-        {isLoading && <Loading />}
-        {isError && <p>Error</p>}
-      </div>
+        </div>
+      )}
+      {isLoading && <Loading />}
+      {isError && <p>Error</p>}
     </>
   );
 };
