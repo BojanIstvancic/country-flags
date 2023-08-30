@@ -1,15 +1,15 @@
 import { JSXElementConstructor, ReactElement } from "react";
-import { useAppSelector } from "../redux/hooks";
+import { useAppSelector } from "../../redux/hooks";
 
 import Header from "./Header";
-import { selectTheme } from "../redux/features/theme/themeSlice";
-import { Theme } from "../data/constants";
+import { selectTheme } from "../../redux/features/theme/themeSlice";
+import { Theme } from "../../data/constants";
 
 interface LayoutProps {
   children: ReactElement<any, string | JSXElementConstructor<any>> | null;
 }
 
-function Layout({ children }: LayoutProps) {
+const Layout = ({ children }: LayoutProps) => {
   const { theme } = useAppSelector(selectTheme);
 
   return (
@@ -24,6 +24,6 @@ function Layout({ children }: LayoutProps) {
       <div className={`container mx-auto`}>{children}</div>
     </div>
   );
-}
+};
 
 export default Layout;

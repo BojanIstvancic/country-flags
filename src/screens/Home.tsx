@@ -1,11 +1,11 @@
 import { Helmet } from "react-helmet-async";
 import { useGetAllPokemonsQuery } from "../redux/services/pokemon/pokemonAPI";
+import { Link } from "react-router-dom";
 
-function Home() {
+const Home = () => {
   const { data, isLoading, isSuccess, isError, error } =
     useGetAllPokemonsQuery();
 
-  console.log(data);
   return (
     <>
       <Helmet>
@@ -17,9 +17,10 @@ function Home() {
       </Helmet>
       <div className="Home">
         <p>Home Page</p>
+        <Link to="/asdas">didi</Link>
       </div>
     </>
   );
-}
+};
 
 export default Home;

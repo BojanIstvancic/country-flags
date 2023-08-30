@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useParams } from "react-router-dom";
 
-function Details() {
+const Details = () => {
   const { id } = useParams();
 
   return (
@@ -14,6 +14,6 @@ function Details() {
       </div>
     </>
   );
-}
+};
 
 export default Details;

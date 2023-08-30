@@ -1,10 +1,14 @@
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 import NightlightRoundedIcon from "@mui/icons-material/NightlightRounded";
 import WbSunnyRoundedIcon from "@mui/icons-material/WbSunnyRounded";
-import { changeTheme, selectTheme } from "../redux/features/theme/themeSlice";
-import { Theme } from "../data/constants";
+import {
+  changeTheme,
+  selectTheme,
+} from "../../redux/features/theme/themeSlice";
+import { Theme } from "../../data/constants";
 import { Link } from "react-router-dom";
+import { memo } from "react";
 
 function Header() {
   const dispatch = useAppDispatch();
@@ -37,4 +41,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default memo(Header);
