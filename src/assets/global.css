@@ -36,4 +36,10 @@
     font-size: clamp(1rem, 0.8548rem + 0.6452vw, 1.5rem);
     line-height: 1.2;
   }
+
+  p {
+    @apply text-base;
+    margin-bottom: 1em;
+    line-height: 1.5;
+  }
 }

@@ -28,13 +28,9 @@ function Header() {
         <h6 className="mb-0 cursor-pointer">
           <Link to="/">Pokemons</Link>
         </h6>
-        <div
-          className="flex items-center cursor-pointer"
-          onClick={handleChangeTheme}
-        >
+        <div className="cursor-pointer" onClick={handleChangeTheme}>
           {theme === Theme.DARK && <NightlightRoundedIcon />}
           {theme === Theme.LIGHT && <WbSunnyRoundedIcon />}
-          <p className="ml-2">Change Theme</p>
         </div>
       </div>
     </div>

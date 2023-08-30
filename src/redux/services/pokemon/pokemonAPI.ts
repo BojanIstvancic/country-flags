@@ -17,7 +17,7 @@ export const pokemonApi = createApi({
 
 export const { useGetAllPokemonsQuery } = pokemonApi;
 
-type Pokemon = {
+export type Pokemon = {
   name: string;
   url: string;
 };
