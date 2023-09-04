@@ -11,15 +11,16 @@ const List = () => {
   console.log(data);
   return (
     <>
+      <h1>All pokemons</h1>
       {data && (
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
           {data.results.map((item: Pokemon) => (
             <ListItem item={item} key={item.name} />
           ))}
         </div>
       )}
       {isLoading && <Loading />}
-      {isError && <p>Error</p>}
+      {isError && <h3 className="text-center">Server error</h3>}
     </>
   );
 };

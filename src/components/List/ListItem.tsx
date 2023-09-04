@@ -10,7 +10,7 @@ const ListItem = ({ item }: ListItemProps) => (
       <img
         src={`https://img.pokemondb.net/artwork/large/${item.name}.jpg`}
         alt={item.name}
-        className="w-full h-28 object-contain"
+        className="w-full h-28 object-contain md:h-36 lg:h-48"
       />
     </div>
     <p className="text-lg first-letter:uppercase text-center mb-0">
