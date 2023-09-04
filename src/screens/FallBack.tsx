@@ -7,7 +7,6 @@ const FallBack = () => (
       <title>Pokemons | Fallback</title>
     </Helmet>
     <div className="FallBack">
-      <p>Loading Routes</p>
       <Loading />
     </div>
   </>

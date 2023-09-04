@@ -8,7 +8,6 @@ import ListItem from "./ListItem";
 const List = () => {
   const { data, isLoading, isError } = useGetAllPokemonsQuery();
 
-  console.log(data);
   return (
     <>
       <h1>All pokemons</h1>
