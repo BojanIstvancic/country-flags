@@ -13,8 +13,8 @@ const List = () => {
       <h1>All pokemons</h1>
       {data && (
         <div className="grid grid-cols-2 gap-4 md:grid-cols-3 xl:grid-cols-4">
-          {data.results.map((item: Pokemon) => (
-            <ListItem item={item} key={item.name} />
+          {data.results.map((item: Pokemon, index) => (
+            <ListItem item={item} key={item.name} id={index + 1} />
           ))}
         </div>
       )}

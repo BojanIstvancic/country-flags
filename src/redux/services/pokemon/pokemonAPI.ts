@@ -7,22 +7,60 @@ export const pokemonApi = createApi({
   }),
   tagTypes: ["Pokemons"],
   endpoints: (builder) => ({
-    getAllPokemons: builder.query<PokemonResponse, void>({
+    getAllPokemons: builder.query<getAllPokemonsResponse, void>({
       query: () => "pokemon",
+    }),
+    getPokemonData: builder.query<getPokemonDataResponse, number>({
+      query: (id) => `pokemon/${id}`,
     }),
   }),
 });
 
-export const { useGetAllPokemonsQuery } = pokemonApi;
+export const { useGetAllPokemonsQuery, useGetPokemonDataQuery } = pokemonApi;
 
 export type Pokemon = {
   name: string;
   url: string;
 };
 
-type PokemonResponse = {
+type getAllPokemonsResponse = {
   count: number;
   next: null | string;
   previous: null | string;
   results: Pokemon[];
+};
+
+type Type = {
+  slot: number;
+  type: {
+    name: string;
+    url: string;
+  };
+};
+
+type Stat = {
+  base_stat: number;
+  effort: number;
+  stat: {
+    name: string;
+    url: string;
+  };
+};
+
+type Ability = {
+  ability: {
+    name: string;
+    url: string;
+  };
+  is_hidden: boolean;
+  slot: number;
+};
+
+type getPokemonDataResponse = {
+  name: string;
+  weight: number;
+  height: number;
+  types: Type[];
+  stats: Stat[];
+  abilities: Ability[];
 };
