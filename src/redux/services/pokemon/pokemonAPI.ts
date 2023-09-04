@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { PokemonType } from "../../../shared/types";
 
 export const pokemonApi = createApi({
   reducerPath: "pokemonApi",
@@ -33,7 +34,12 @@ type getAllPokemonsResponse = {
 type Type = {
   slot: number;
   type: {
-    name: string;
+    name:
+      | PokemonType.WATER
+      | PokemonType.FIRE
+      | PokemonType.GRASS
+      | PokemonType.BUG
+      | PokemonType.NORMAL;
     url: string;
   };
 };

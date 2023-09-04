@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import type { AppState } from "../../store";
-import { Theme } from "../../../data/constants";
+import { Theme } from "../../../shared/types";
 
 export interface ThemeSlice {
   theme: Theme.DARK | Theme.LIGHT;

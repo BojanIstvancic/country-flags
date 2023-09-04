@@ -6,7 +6,7 @@ import {
   changeTheme,
   selectTheme,
 } from "../../redux/features/theme/themeSlice";
-import { Theme } from "../../data/constants";
+import { Theme } from "../../shared/types";
 import { Link } from "react-router-dom";
 import { memo } from "react";
 

@@ -15,8 +15,6 @@ const ListItem = ({ item, id }: ListItemProps) => {
 
   const { data } = useGetPokemonDataQuery(id);
 
-  console.log(data);
-
   useEffect(() => {
     let observerRefValue: any = null;
 
@@ -54,7 +52,7 @@ const ListItem = ({ item, id }: ListItemProps) => {
           className="w-full h-28 object-contain md:h-36 lg:h-48"
         />
         <div className="absolute right-1 bottom-1">
-          <TypeIcon />
+          <TypeIcon type={data?.types[0].type.name} />
         </div>
       </div>
       <p className="text-lg first-letter:uppercase text-center mb-0">

@@ -3,7 +3,7 @@ import { useAppSelector } from "../../redux/hooks";
 
 import Header from "./Header";
 import { selectTheme } from "../../redux/features/theme/themeSlice";
-import { Theme } from "../../data/constants";
+import { Theme } from "../../shared/types";
 
 interface LayoutProps {
   children: ReactElement<any, string | JSXElementConstructor<any>> | null;
