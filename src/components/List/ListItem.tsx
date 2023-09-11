@@ -1,9 +1,9 @@
-import { useEffect, useRef } from "react";
 import {
   Pokemon,
   useGetPokemonDataQuery,
 } from "../../redux/services/pokemon/pokemonAPI";
 import TypeIcon from "../TypeIcon/TypeIcon";
+import { useInView } from "react-intersection-observer";
 
 interface ListItemProps {
   item: Pokemon;
@@ -11,40 +11,19 @@ interface ListItemProps {
 }
 
 const ListItem = ({ item, id }: ListItemProps) => {
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const { ref, inView } = useInView({
+    threshold: 0.5,
+  });
 
-  const { data } = useGetPokemonDataQuery(id);
-
-  useEffect(() => {
-    let observerRefValue: any = null;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("opacity-100");
-          } else {
-            entry.target.classList.remove("opacity-100");
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-      observerRefValue = containerRef.current;
-    }
-
-    return () => {
-      if (observerRefValue) observer.unobserve(observerRefValue);
-    };
-  }, [containerRef]);
+  const { data } = useGetPokemonDataQuery(id, {
+    skip: !inView,
+  });
 
   return (
-    <div ref={containerRef} className="opacity-0 transition-all">
+    <div
+      ref={ref}
+      className={`${inView ? "opacioty-100" : "opacity-0"} transition-all `}
+    >
       <div className="bg-white p-2 rounded mb-2 relative">
         <img
           src={`https://img.pokemondb.net/artwork/large/${item.name}.jpg`}
