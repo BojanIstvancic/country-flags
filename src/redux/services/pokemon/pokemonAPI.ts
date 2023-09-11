@@ -9,7 +9,7 @@ export const pokemonApi = createApi({
   tagTypes: ["Pokemons"],
   endpoints: (builder) => ({
     getAllPokemons: builder.query<getAllPokemonsResponse, void>({
-      query: () => "pokemon",
+      query: () => "pokemon/?limit=500",
     }),
     getPokemonData: builder.query<getPokemonDataResponse, number>({
       query: (id) => `pokemon/${id}`,

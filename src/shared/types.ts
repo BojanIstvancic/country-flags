@@ -9,4 +9,10 @@ export enum PokemonType {
   GRASS = "grass",
   BUG = "bug",
   NORMAL = "normal",
+  ELECTRIC = "electric",
+  POISON = "poison",
+  GROUND = "ground",
+  FAIRY = "fairy",
+  FIGHTING = "fighting",
+  PSYCHIC = "psychic",
 }

@@ -22,7 +22,7 @@ const ListItem = ({ item, id }: ListItemProps) => {
   return (
     <div
       ref={ref}
-      className={`${inView ? "opacioty-100" : "opacity-0"} transition-all `}
+      className={`${inView ? "opacity-100" : "opacity-0"} transition-all `}
     >
       <div className="bg-white p-2 rounded mb-2 relative">
         <img
