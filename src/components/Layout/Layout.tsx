@@ -2,6 +2,8 @@ import { JSXElementConstructor, ReactElement } from "react";
 import { useAppSelector } from "../../redux/hooks";
 
 import Header from "./Header";
+import Player from "../Player/Player";
+
 import { selectTheme } from "../../redux/features/theme/themeSlice";
 import { Theme } from "../../shared/types";
 
@@ -22,6 +24,7 @@ const Layout = ({ children }: LayoutProps) => {
     >
       <Header />
       <main className={`container mx-auto min-h-screen`}>{children}</main>
+      <Player />
     </div>
   );
 };
