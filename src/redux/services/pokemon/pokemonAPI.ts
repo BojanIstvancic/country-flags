@@ -39,7 +39,13 @@ type Type = {
       | PokemonType.FIRE
       | PokemonType.GRASS
       | PokemonType.BUG
-      | PokemonType.NORMAL;
+      | PokemonType.NORMAL
+      | PokemonType.ELECTRIC
+      | PokemonType.POISON
+      | PokemonType.GROUND
+      | PokemonType.FAIRY
+      | PokemonType.FIGHTING
+      | PokemonType.PSYCHIC;
     url: string;
   };
 };

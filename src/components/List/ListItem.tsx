@@ -1,9 +1,11 @@
+import { useRef } from "react";
 import {
   Pokemon,
   useGetPokemonDataQuery,
 } from "../../redux/services/pokemon/pokemonAPI";
 import TypeIcon from "../TypeIcon/TypeIcon";
 import { useInView } from "react-intersection-observer";
+import Modal, { ModalRefType } from "../Modal/Modal";
 
 interface ListItemProps {
   item: Pokemon;
@@ -19,10 +21,25 @@ const ListItem = ({ item, id }: ListItemProps) => {
     skip: !inView,
   });
 
+  const modalRef = useRef<ModalRefType>(null);
+
+  const openModal = () => {
+    if (modalRef.current) {
+      modalRef.current.openModal();
+    }
+  };
+
+  // add create component for modal
+  // add styling for hover / active on icon
+  // check modal styling for all sizes
+
+  console.log("rerender");
+
   return (
     <div
       ref={ref}
       className={`${inView ? "opacity-100" : "opacity-0"} transition-all `}
+      onClick={openModal}
     >
       <div className="bg-white p-2 rounded mb-2 relative">
         <img
@@ -37,6 +54,9 @@ const ListItem = ({ item, id }: ListItemProps) => {
       <p className="text-lg first-letter:uppercase text-center mb-0">
         {item.name}
       </p>
+      <Modal ref={modalRef}>
+        <p>Treba tu neka data da udje</p>
+      </Modal>
     </div>
   );
 };

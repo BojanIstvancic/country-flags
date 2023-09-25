@@ -16,7 +16,6 @@ interface TypeIconProps {
 }
 
 const TypeIcon = ({ type }: TypeIconProps) => {
-  console.log(type);
   const generateTypeIcon = (type: string | undefined) => {
     switch (type) {
       case PokemonType.FIRE:
