@@ -16,3 +16,39 @@ export enum PokemonType {
   FIGHTING = "fighting",
   PSYCHIC = "psychic",
 }
+
+type Type = {
+  slot: number;
+  type: {
+    name:
+      | PokemonType.WATER
+      | PokemonType.FIRE
+      | PokemonType.GRASS
+      | PokemonType.BUG
+      | PokemonType.NORMAL
+      | PokemonType.ELECTRIC
+      | PokemonType.POISON
+      | PokemonType.GROUND
+      | PokemonType.FAIRY
+      | PokemonType.FIGHTING
+      | PokemonType.PSYCHIC;
+    url: string;
+  };
+};
+
+type Ability = {
+  ability: {
+    name: string;
+    url: string;
+  };
+  is_hidden: boolean;
+  slot: number;
+};
+
+export type PokemonDetails = {
+  name: string;
+  weight: number;
+  height: number;
+  types: Type[];
+  abilities: Ability[];
+};

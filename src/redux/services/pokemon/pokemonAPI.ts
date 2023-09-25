@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { PokemonType } from "../../../shared/types";
+import { PokemonDetails } from "../../../shared/types";
 
 export const pokemonApi = createApi({
   reducerPath: "pokemonApi",
@@ -31,48 +31,4 @@ type getAllPokemonsResponse = {
   results: Pokemon[];
 };
 
-type Type = {
-  slot: number;
-  type: {
-    name:
-      | PokemonType.WATER
-      | PokemonType.FIRE
-      | PokemonType.GRASS
-      | PokemonType.BUG
-      | PokemonType.NORMAL
-      | PokemonType.ELECTRIC
-      | PokemonType.POISON
-      | PokemonType.GROUND
-      | PokemonType.FAIRY
-      | PokemonType.FIGHTING
-      | PokemonType.PSYCHIC;
-    url: string;
-  };
-};
-
-type Stat = {
-  base_stat: number;
-  effort: number;
-  stat: {
-    name: string;
-    url: string;
-  };
-};
-
-type Ability = {
-  ability: {
-    name: string;
-    url: string;
-  };
-  is_hidden: boolean;
-  slot: number;
-};
-
-type getPokemonDataResponse = {
-  name: string;
-  weight: number;
-  height: number;
-  types: Type[];
-  stats: Stat[];
-  abilities: Ability[];
-};
+interface getPokemonDataResponse extends PokemonDetails {}

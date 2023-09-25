@@ -34,7 +34,7 @@ const Modal = ({ children }: ModalProps, ref: Ref<ModalRefType>) => {
     <div
       className={`${
         !isOpen && "hidden"
-      } fixed top-0 left-0 right-0 z-50 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+      } fixed top-0 left-0 right-0 z-50 overflow-x-hidden overflow-y-auto md:inset-0 h-screen  max-h-full`}
     >
       <div
         className={`relative h-screen w-screen opacity-80 
