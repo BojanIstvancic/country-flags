@@ -1,6 +1,23 @@
 # Pokemons
 
-ReactJs presentational website.
+ReactJS app created for practice.
+
+Things implemented:
+
+- State management - Redux Toolkit (theme, pokemon query)
+- Animate Blocks and pull the data when block enter viewport - Intersection Observer
+- Expose toggle modal handler - useImperativeHandle
+- Play Pokemon theme song on click
+
+Thinks to add in future:
+
+- visualisation
+- component tests
+
+## Available routes
+
+- Home Page - "/"
+- Not found - if we hit a route that doesn't exist
 
 ## Getting Started
 

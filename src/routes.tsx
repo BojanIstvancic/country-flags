@@ -10,7 +10,6 @@ const Loadable = (Component: any) => (props: JSX.IntrinsicAttributes) =>
   );
 
 const Home = Loadable(lazy(() => import("./screens/Home")));
-const Details = Loadable(lazy(() => import("./screens/Details")));
 const NotFound = Loadable(lazy(() => import("./screens/NotFound")));
 
 const routes: RouteObject[] = [
@@ -20,10 +19,6 @@ const routes: RouteObject[] = [
       {
         index: true,
         element: <Home />,
-      },
-      {
-        path: ":id",
-        element: <Details />,
       },
     ],
   },
