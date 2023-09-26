@@ -33,12 +33,12 @@ const ListItem = ({ item, id }: ListItemProps) => {
   return (
     <div
       ref={ref}
-      className={`${
-        inView ? "opacity-100" : "opacity-0"
-      } transition-all cursor-pointer group`}
-      onClick={openModal}
+      className={`${inView ? "opacity-100" : "opacity-0"} transition-all`}
     >
-      <div className="bg-white p-2 rounded mb-2 relative">
+      <div
+        className="bg-white p-2 rounded mb-2 relative cursor-pointer group"
+        onClick={openModal}
+      >
         <img
           src={`https://img.pokemondb.net/artwork/large/${item.name}.jpg`}
           alt={item.name}
