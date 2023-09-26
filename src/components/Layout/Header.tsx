@@ -10,7 +10,7 @@ import { Theme } from "../../shared/types";
 import { Link } from "react-router-dom";
 import { memo } from "react";
 
-function Header() {
+const Header = () => {
   const dispatch = useAppDispatch();
   const { theme } = useAppSelector(selectTheme);
 
@@ -35,6 +35,6 @@ function Header() {
       </div>
     </div>
   );
-}
+};
 
 export default memo(Header);

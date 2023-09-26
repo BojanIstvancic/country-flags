@@ -1,5 +1,8 @@
 import { PokemonDetails } from "../../shared/types";
 import TypeIcon from "../TypeIcon/TypeIcon";
+import ScaleIcon from "@mui/icons-material/Scale";
+import HeightIcon from "@mui/icons-material/Height";
+import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 
 const ListItemDetails = ({
   name,
@@ -9,22 +12,45 @@ const ListItemDetails = ({
   abilities,
 }: PokemonDetails) => (
   <div>
-    <div className="bg-white p-2 rounded mb-2 relative">
+    <h3 className="text-center first-letter:uppercase">{name}</h3>
+    <div className="bg-white p-2 rounded mb-6 relative">
       <img
         src={`https://img.pokemondb.net/artwork/large/${name}.jpg`}
         alt={name}
-        className="w-96 h-64 object-contain md:h-36 lg:h-48 group-hover:scale-105 transition-all"
+        className="mx-auto my-0 w-64 h-64 md:w-96 object-contain max-w-none"
       />
       <div className="absolute right-1 bottom-1">
         <TypeIcon type={types[0].type.name} />
       </div>
     </div>
-    <p>Height: {height}</p>
-    <p>Weight {weight}</p>
-    <p>Abilities</p>
-    {abilities.map((ability) => (
-      <p>{ability.ability.name}</p>
-    ))}
+    <div className="flex items-center mb-2 mr-6">
+      <div className="w-8">
+        <HeightIcon fontSize="small" />
+      </div>
+      <p className="mb-0">Height: {height / 10} m </p>
+    </div>
+    <div className="flex items-center mb-2">
+      <div className="w-8">
+        <ScaleIcon fontSize="small" />
+      </div>
+      <p className="mb-0">Weight: {weight / 10} kg</p>
+    </div>
+    <div className="flex items-center mb-2">
+      <div className="w-8">
+        <AutoFixHighIcon fontSize="small" />
+      </div>
+      <p className="mb-0 font-bold">Abilities</p>
+    </div>
+    <ul>
+      {abilities.map((ability) => (
+        <li
+          className="first-letter:uppercase border-b-2 py-2"
+          key={ability.ability.name}
+        >
+          {ability.ability.name}
+        </li>
+      ))}
+    </ul>
   </div>
 );
 

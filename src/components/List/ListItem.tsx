@@ -30,9 +30,6 @@ const ListItem = ({ item, id }: ListItemProps) => {
     }
   };
 
-  // add create component for modal
-  // check modal styling for all sizes
-
   return (
     <div
       ref={ref}
