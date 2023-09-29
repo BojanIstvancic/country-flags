@@ -5,6 +5,7 @@ import HeightIcon from "@mui/icons-material/Height";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 
 const ListItemDetails = ({
+  id,
   name,
   weight,
   height,
@@ -12,7 +13,9 @@ const ListItemDetails = ({
   abilities,
 }: PokemonDetails) => (
   <div>
-    <h3 className="text-center first-letter:uppercase">{name}</h3>
+    <h3 className="text-center first-letter:uppercase">
+      {name} - {id}
+    </h3>
     <div className="bg-white p-2 rounded mb-6 relative">
       <img
         src={`https://img.pokemondb.net/artwork/large/${name}.jpg`}

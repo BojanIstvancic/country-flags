@@ -9,15 +9,16 @@ Things implemented:
 - Expose toggle modal handler - useImperativeHandle
 - Play Pokemon theme song on click
 
-Thinks to add in future:
+Things to add in future:
 
 - visualisation
 - component tests
+- add pokemon comparison - in progress
 
 ## Available routes
 
 - Home Page - "/"
-- Not found - if we hit a route that doesn't exist
+- Not Found - if we hit a route that doesn't exist
 
 ## Getting Started
 
@@ -45,12 +46,6 @@ Install node modules
 
 ```
 npm install
-```
-
-Create and update .env file
-
-```
-NEXT_PUBLIC_API_URI=XXXX -- UPDATE THIS
 ```
 
 Run the website

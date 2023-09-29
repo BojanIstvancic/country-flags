@@ -3,11 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import type { AppState } from "../../store";
 import { Theme } from "../../../shared/types";
 
-export interface ThemeSlice {
+export interface ThemeSliceProps {
   theme: Theme.DARK | Theme.LIGHT;
 }
 
-const initialState: ThemeSlice = {
+const initialState: ThemeSliceProps = {
   theme: Theme.DARK,
 };
 

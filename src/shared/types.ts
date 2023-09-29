@@ -46,6 +46,7 @@ type Ability = {
 };
 
 export type PokemonDetails = {
+  id: number;
   name: string;
   weight: number;
   height: number;
