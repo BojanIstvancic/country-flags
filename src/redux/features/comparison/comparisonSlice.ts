@@ -17,15 +17,44 @@ export const comparisonSlice = createSlice({
   initialState,
   reducers: {
     addPokemon: (state, action: PayloadAction<PokemonDetails>) => {
+      const addedPokemons = localStorage.getItem("comparison");
+
+      let updatedPokemons: PokemonDetails[] = [];
+
+      if (addedPokemons) {
+        updatedPokemons.push(...JSON.parse(addedPokemons));
+      }
+
+      updatedPokemons.push(action.payload);
+
+      localStorage.setItem("comparison", JSON.stringify(updatedPokemons));
       state.items.push(action.payload);
     },
     removePokemon: (state, action: PayloadAction<number>) => {
+      const addedPokemons = localStorage.getItem("comparison");
+      let updatedPokemons: PokemonDetails[] = [];
+
+      if (addedPokemons) {
+        updatedPokemons = JSON.parse(addedPokemons).filter(
+          (item: PokemonDetails) => item.id !== action.payload
+        );
+      }
+
+      localStorage.setItem("comparison", JSON.stringify(updatedPokemons));
       state.items = state.items.filter((item) => item.id !== action.payload);
+    },
+    getAddedPokemons: (state) => {
+      const addedPokemons = localStorage.getItem("comparison");
+
+      if (addedPokemons) {
+        state.items = JSON.parse(addedPokemons);
+      }
     },
   },
 });
 
-export const { addPokemon, removePokemon } = comparisonSlice.actions;
+export const { addPokemon, removePokemon, getAddedPokemons } =
+  comparisonSlice.actions;
 
 export const selectAmountOfPokemons = (state: AppState) =>
   state.comparison.items.length;

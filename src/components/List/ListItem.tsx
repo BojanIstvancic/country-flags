@@ -7,7 +7,6 @@ import TypeIcon from "../TypeIcon/TypeIcon";
 import { useInView } from "react-intersection-observer";
 import Modal, { ModalRefType } from "../Modal/Modal";
 import ListItemDetails from "./ListItemDetails";
-import ListComparison from "./ListComparison";
 
 interface ListItemProps {
   item: Pokemon;
@@ -48,16 +47,6 @@ const ListItem = ({ item, id }: ListItemProps) => {
         <div className="absolute right-1 bottom-1">
           <TypeIcon type={data?.types[0].type.name} />
         </div>
-        {data && (
-          <ListComparison
-            id={data.id}
-            name={item.name}
-            types={data.types}
-            height={data.height}
-            weight={data.weight}
-            abilities={data.abilities}
-          />
-        )}
       </div>
       <p className="text-lg first-letter:uppercase text-center mb-0">
         {item.name}

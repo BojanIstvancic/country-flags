@@ -3,6 +3,7 @@ import TypeIcon from "../TypeIcon/TypeIcon";
 import ScaleIcon from "@mui/icons-material/Scale";
 import HeightIcon from "@mui/icons-material/Height";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
+import ListComparison from "./ListComparison";
 
 const ListItemDetails = ({
   id,
@@ -25,6 +26,14 @@ const ListItemDetails = ({
       <div className="absolute right-1 bottom-1">
         <TypeIcon type={types[0].type.name} />
       </div>
+      <ListComparison
+        id={id}
+        name={name}
+        types={types}
+        height={height}
+        weight={weight}
+        abilities={abilities}
+      />
     </div>
     <div className="flex items-center mb-2 mr-6">
       <div className="w-8">

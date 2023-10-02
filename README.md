@@ -13,7 +13,18 @@ Things to add in future:
 
 - visualisation
 - component tests
-- add pokemon comparison - in progress
+- add pokemon comparison:- in progress
+  - add logic:
+    - localstorage - done
+    - reducers - done
+  - add messages:
+    - pokemon added
+    - pokemon removed
+    - pokemon can't be added, max 2 items
+  - add page for comparison
+  - add comparison preview in header
+    - added items with data
+    - number of items currently added
 
 ## Available routes
 
