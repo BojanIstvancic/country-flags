@@ -8,8 +8,10 @@ const Compare = () => {
   const amountOfComparisonPokemons = useAppSelector(selectAmountOfPokemons);
   const [isOpen, setIsOpen] = useState(false);
 
-  const openListHandler = () => {
+  const openListHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     setIsOpen((prev) => !prev);
+
+    event.stopPropagation();
   };
 
   return (
