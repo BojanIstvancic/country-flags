@@ -1,10 +1,22 @@
+import { Tooltip } from "@mui/material";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
+import { useAppDispatch } from "../../redux/hooks";
+import { removePokemon } from "../../redux/features/comparison/comparisonSlice";
+
 interface CompareListItemProps {
   name: string;
+  id: number;
 }
 
-const CompareListItem = ({ name }: CompareListItemProps) => {
+const CompareListItem = ({ name, id }: CompareListItemProps) => {
+  const dispatch = useAppDispatch();
+
+  const handleRemoveComparisonPokemon = () => {
+    dispatch(removePokemon(id));
+  };
+
   return (
-    <div className="flex items-center mb-2 last:mb-0">
+    <div className="flex items-center mb-2">
       <div className="w-12 h-12 bg-white">
         <img
           src={`https://img.pokemondb.net/artwork/large/${name}.jpg`}
@@ -13,6 +25,13 @@ const CompareListItem = ({ name }: CompareListItemProps) => {
         />
       </div>
       <p className="mx-5 mb-0 flex-1">{name}</p>
+      <Tooltip
+        title="Remove pokemon"
+        className="cursor-pointer"
+        onClick={handleRemoveComparisonPokemon}
+      >
+        <RemoveCircleOutlineIcon />
+      </Tooltip>
     </div>
   );
 };

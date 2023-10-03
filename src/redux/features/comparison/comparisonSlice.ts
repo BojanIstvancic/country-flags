@@ -50,11 +50,19 @@ export const comparisonSlice = createSlice({
         state.items = JSON.parse(addedPokemons);
       }
     },
+    removeAllPokemons: (state) => {
+      state.items = [];
+      localStorage.removeItem("comparison");
+    },
   },
 });
 
-export const { addPokemon, removePokemon, getAddedPokemons } =
-  comparisonSlice.actions;
+export const {
+  addPokemon,
+  removePokemon,
+  getAddedPokemons,
+  removeAllPokemons,
+} = comparisonSlice.actions;
 
 export const selectAmountOfPokemons = (state: AppState) =>
   state.comparison.items.length;

@@ -2,12 +2,19 @@ import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import { selectAmountOfPokemons } from "../../redux/features/comparison/comparisonSlice";
 import { useAppSelector } from "../../redux/hooks";
 import CompareList from "./CompareList";
+import { useState } from "react";
 
 const Compare = () => {
   const amountOfComparisonPokemons = useAppSelector(selectAmountOfPokemons);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openListHandler = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
     <div className="relative">
-      <div className="cursor-pointer mr-2">
+      <div className="cursor-pointer mr-2" onClick={openListHandler}>
         <CompareArrowsIcon />
         {!!amountOfComparisonPokemons && (
           <div
@@ -18,7 +25,9 @@ const Compare = () => {
           </div>
         )}
       </div>
-      <CompareList />
+      {isOpen && !!amountOfComparisonPokemons && (
+        <CompareList isOpenHandler={setIsOpen} />
+      )}
     </div>
   );
 };
