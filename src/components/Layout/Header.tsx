@@ -8,13 +8,11 @@ import {
 } from "../../redux/features/theme/themeSlice";
 import { Theme } from "../../shared/types";
 import { Link } from "react-router-dom";
-import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
-import { selectAmountOfPokemons } from "../../redux/features/comparison/comparisonSlice";
+import Compare from "../Compare/Compare";
 
 const Header = () => {
   const dispatch = useAppDispatch();
   const { theme } = useAppSelector(selectTheme);
-  const amountOfComparisonPokemons = useAppSelector(selectAmountOfPokemons);
 
   const handleChangeTheme = () => {
     dispatch(changeTheme());
@@ -33,12 +31,7 @@ const Header = () => {
           <Link to="/">Pokemons</Link>
         </h6>
         <div className="flex">
-          <div className="cursor-pointer mr-2 relative">
-            <CompareArrowsIcon />
-            <div className="absolute right-0 bottom-0 bg-slate-900">
-              {amountOfComparisonPokemons}
-            </div>
-          </div>
+          <Compare />
           <div className="cursor-pointer" onClick={handleChangeTheme}>
             {theme === Theme.DARK && <NightlightRoundedIcon />}
             {theme === Theme.LIGHT && <WbSunnyRoundedIcon />}
