@@ -7,6 +7,7 @@ import TypeIcon from "../TypeIcon/TypeIcon";
 import { useInView } from "react-intersection-observer";
 import Modal, { ModalRefType } from "../Modal/Modal";
 import ListItemDetails from "./ListItemDetails";
+import { generateImageURL } from "../../shared/utils";
 
 interface ListItemProps {
   item: Pokemon;
@@ -40,7 +41,7 @@ const ListItem = ({ item, id }: ListItemProps) => {
         onClick={openModal}
       >
         <img
-          src={`https://img.pokemondb.net/artwork/large/${item.name}.jpg`}
+          src={generateImageURL(item.name)}
           alt={item.name}
           className="w-full h-28 object-contain md:h-36 lg:h-48 group-hover:scale-105 transition-all"
         />

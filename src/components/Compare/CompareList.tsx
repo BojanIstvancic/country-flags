@@ -3,13 +3,10 @@ import {
   removeAllPokemons,
   selectPokemons,
 } from "../../redux/features/comparison/comparisonSlice";
-import {
-  useAppDispatch,
-  useAppSelector,
-  useOutsideClick,
-} from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { PokemonDetails } from "../../shared/types";
 import CompareListItem from "./CompareListItem";
+import { useOutsideClick } from "../../shared/hooks";
 
 interface CompareListProps {
   isOpenHandler: (arg1: boolean) => void;

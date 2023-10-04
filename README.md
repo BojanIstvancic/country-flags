@@ -8,18 +8,17 @@ Things implemented:
 - Animate Blocks and pull the data when block enter viewport - Intersection Observer
 - Expose toggle modal handler - useImperativeHandle
 - Play Pokemon theme song on click
+- Pokemon comparison - compare pokemons stats
 
 Things to add in future:
 
 - visualisation
 - component tests
-- add pokemon comparison:- in progress
-  - add page for comparison
-  - create handler to close the div when clicked outside
 
 ## Available routes
 
-- Home Page - "/"
+- Home Page - "/" - displays list of all pokemons
+- Comparison Page - "/" - displays list of pokemons selected for comparison
 - Not Found - if we hit a route that doesn't exist
 
 ## Getting Started
